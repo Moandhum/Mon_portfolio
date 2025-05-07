@@ -1,0 +1,48 @@
+[
+
+  {
+    "title": "KM-Traduction : Application pour la collecte de traductions français-comorien",
+    "description": "KM-Traduction est une application simple et intuitive conçue pour collecter des traductions entre le français et le comorien. Elle vise à créer des ressources numériques pour la langue comorienne, qui en manque aujourd'hui. Les données collectées pourront ensuite être utilisées pour développer des projets d'intelligence artificielle, tels que des chatbots, des traducteurs automatiques et d'autres outils linguistiques.",
+    "technologies": ["Python", "Streamlit", "MongoDB"],
+    "github_url": "https://comorian-translation-ccqhbdevcvc2aebtvw9amr.streamlit.app/",
+    "image_url": "/static/images/logo-km-app.png"
+  }
+  ,
+  {
+    "title": "Prédiction des prix des maisons",
+    "description": "Ce projet vise à prédire les prix des maisons en utilisant diverses caractéristiques des propriétés telles que la superficie, le nombre de chambres, la proximité des routes principales, et bien d'autres. Grâce à l'analyse et à l'exploration des données, un modèle de machine learning est développé pour estimer les prix des maisons avec précision.",
+    "technologies": ["Python", "scikit-learn", "pandas"],
+    "github_url": "https://github.com/Moandhum/House_price_prediction",
+    "image_url": "/static/images/price_prediction.png"
+  },
+  {
+    "title": "Analyse de sentiments sur Youtube",
+    "description": "Classification des sentiments positifs/négatifs dans des commentaires de vidéo.",
+    "technologies": ["Python", "NLTK", "matplotlib", "scikit-learn"],
+    "github_url": "https://github.com/ton-profil/analyse-sentiments",
+    "image_url": "/static/images/Sentiment-Analysis.png"
+  },
+  {
+    "title": "Analyse de l'Anémie comme Indicateur de Malnutrition chez les Enfants Ghanéens",
+    "description": "Analyse des facteurs influençant l’anémie infantile au Ghana, à partir de données d'enquête démographique et de santé.",
+    "technologies": ["R", "tidyverse", "ggplot2", "FactoMineR", "dplyr"],
+    "github_url": "https://github.com/Moandhum/Mini-projet-sur-la-malnutrition",
+    "image_url": "/static/images/anemie.png"
+  },
+  {
+    "title": "Séparation des sons mixés par Apprentissage statistique",
+    "description": "Séparation de sources audio à l'aide de l'analyse par composantes indépendantes (ICA).",
+    "technologies": ["Python", "NumPy", "scikit-learn", "librosa"],
+    "github_url": "https://github.com/ton-profil/audio-separation",
+    "image_url": "/static/images/sounds_separation.png"
+  },
+  {
+    "title": "Détection de fissures dans le béton par Deep Learning",
+    "description": "Utilisation de modèles de deep learning pour la détection automatique de fissures sur des images de structures en béton. Le projet implique le prétraitement des images, la création d'un modèle de classification d'images et l'évaluation des performances du modèle.",
+    "technologies": ["Python", "TensorFlow", "Keras", "OpenCV"],
+    "github_url": "https://github.com/ton-profil/detection-fissures-beton",
+    "image_url": "/static/images/fissures.png"
+  }
+  
+]
+

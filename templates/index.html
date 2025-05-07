@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio - Abdoulandhum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #2c3e50;
+      overflow: hidden; /* Empêche de scroller */
+    }
+
+    .nav {
+      background-color: #007D8A;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav a:hover {
+      background-color: #005f66;
+    }
+
+    .main-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      height: calc(100% - 60px); /* 100% hauteur - la hauteur de la navbar */
+      position: relative;
+      background: url('static/images/stat.jpg') no-repeat center right/cover;
+    }
+
+    .profile-photo {
+      flex: 0 0 auto;
+      margin-right: 100px;
+    }
+
+    .profile-photo img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-photo img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-section {
+      flex: 0 0 700px; /* Largeur fixe plus petite */
+      background-color:rgba(2, 119, 127, 0.85);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: left;
+    }
+
+    .text-section h1 {
+      color: #f5f9fa;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .text-section p {
+    color: #f5f9fa;
+      font-size: 1.1em;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: fixed;
+      top: 50%;
+      right: 30px;
+      transform: translateY(-50%);
+      gap: 20px;
+    }
+
+    .social-icons a {
+      color: #007D8A;
+      font-size: 1.8em;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.3) rotate(10deg);
+      color: #005f66;
+    }
+
+    @media (max-width: 768px) {
+      .main-section {
+        flex-direction: column;
+        background-position: center center;
+      }
+      .profile-photo {
+        margin: 0 0 20px 0;
+      }
+      .social-icons {
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Barre de navigation -->
+<div class="nav">
+  <a href="/">Accueil</a>
+  <a href="/about">À propos</a>
+  <a href="/projects">Projets</a>
+</div>
+
+<!-- Section principale -->
+<div class="main-section">
+
+  <div class="profile-photo">
+    <img src="static/images/moi.jpg" alt="Photo de moi">
+  </div>
+
+  <div class="text-section">
+    <h1>Bonjour, je suis Abdoulandhum 👋</h1>
+    <p>Bienvenue sur mon portfolio en data science.</p>
+    <p>Je développe des projets en Python, j’explore des données et j’aime créer de la valeur à partir de chiffres !</p>
+  </div>
+
+  <!-- Icônes sociales -->
+  <div class="social-icons">
+    <a href="mailto:abdoulandhum@outlook.fr" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/mohamed-bacar-a-94756a236/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.youtube.com/channel/UCvdD6hTJOeljKs1P4xwNrOQ" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+  </div>
+
+</div>
+
+</body>
+</html>
