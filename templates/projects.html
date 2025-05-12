@@ -60,7 +60,7 @@
     }
 
     .project {
-      background: rgba(255, 255, 255, 0.9); /* Cartes semi-transparentes */
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -94,18 +94,30 @@
     }
 
     .short-description {
+      font-size: 1em;
+      line-height: 1.5;
+      color: #555;
+      margin: 0;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      overflow: hidden;
+    }
+
+    .short-description.collapsed {
+      max-height: 4.5em; /* Approx 3 lines */
+      opacity: 1;
+    }
+
+    .short-description.expanded {
+      max-height: 1000px; /* Large enough for any description */
+      opacity: 1;
+    }
+
+    .short-description.collapsed .visible-text {
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
-      font-size: 1em;
-      line-height: 1.5;
-      color: #555;
-    }
-
-    .more-text {
-      display: none;
     }
 
     .show-more {
@@ -114,6 +126,11 @@
       margin-top: 10px;
       font-size: 0.9em;
       align-self: flex-start;
+      transition: color 0.3s;
+    }
+
+    .show-more:hover {
+      color: #005f66;
     }
 
     .tech {
@@ -150,7 +167,7 @@
 
   <div class="nav">
     <a href="/">Accueil</a>
-    <a href="/about">À propos</a>
+    <a href="/about">CV</a>
     <a href="/projects">Projets</a>
   </div>
 
@@ -163,13 +180,12 @@
         <img src="{{ project.image_url }}" alt="Image de {{ project.title }}">
         <div class="project-content">
           <h2>{{ project.title }}</h2>
-          <p class="short-description">
-            {{ project.description | truncate(150, True, '...') }}
-            <span class="more-text">{{ project.description }}</span>
+          <p class="short-description collapsed" aria-expanded="false">
+            <span class="visible-text">{{ project.description }}</span>
           </p>
-          <span class="show-more" onclick="toggleDescription(this)">Voir plus</span>
+          <span class="show-more" role="button" aria-label="Afficher plus de détails sur {{ project.title }}" onclick="toggleDescription(this)">Voir plus</span>
           <p class="tech">Technologies : {{ project.technologies | join(', ') }}</p>
-          <a href="{{ project.github_url }}" class="github-link" target="_blank">Voir sur GitHub</a>
+          <a href="{{ project.github_url }}" class="github-link" target="_blank">Lien vers le projet</a>
         </div>
       </div>
       {% endfor %}
@@ -178,16 +194,21 @@
 
   <script>
     function toggleDescription(element) {
-      const shortDesc = element.previousElementSibling;
-      const moreText = shortDesc.querySelector('.more-text');
-      if (moreText.style.display === "inline") {
-        moreText.style.display = "none";
-        shortDesc.style.webkitLineClamp = "3";
-        element.innerText = "Voir plus";
+      const descriptionEl = element.previousElementSibling;
+      const isExpanded = descriptionEl.classList.contains('expanded');
+
+      if (isExpanded) {
+        descriptionEl.classList.remove('expanded');
+        descriptionEl.classList.add('collapsed');
+        descriptionEl.setAttribute('aria-expanded', 'false');
+        element.innerText = 'Voir plus';
+        element.setAttribute('aria-label', `Afficher plus de détails sur ${element.closest('.project-content').querySelector('h2').innerText}`);
       } else {
-        moreText.style.display = "inline";
-        shortDesc.style.webkitLineClamp = "unset";
-        element.innerText = "Voir moins";
+        descriptionEl.classList.remove('collapsed');
+        descriptionEl.classList.add('expanded');
+        descriptionEl.setAttribute('aria-expanded', 'true');
+        element.innerText = 'Voir moins';
+        element.setAttribute('aria-label', `Afficher moins de détails sur ${element.closest('.project-content').querySelector('h2').innerText}`);
       }
     }
   </script>
